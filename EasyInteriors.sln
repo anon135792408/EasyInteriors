@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyInteriors", "EasyInteriors\EasyInteriors.csproj", "{DCD25541-9008-410C-89DF-7166BDF65E82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyInteriors-Client", "EasyInteriors\EasyInteriors-Client.csproj", "{DCD25541-9008-410C-89DF-7166BDF65E82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyInteriors-Server", "..\EasyInteriors-Server\EasyInteriors-Server.csproj", "{CD99E715-5AE4-49B7-883F-E531D2E6DF68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DCD25541-9008-410C-89DF-7166BDF65E82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCD25541-9008-410C-89DF-7166BDF65E82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCD25541-9008-410C-89DF-7166BDF65E82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD99E715-5AE4-49B7-883F-E531D2E6DF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD99E715-5AE4-49B7-883F-E531D2E6DF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD99E715-5AE4-49B7-883F-E531D2E6DF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD99E715-5AE4-49B7-883F-E531D2E6DF68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

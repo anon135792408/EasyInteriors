@@ -1,0 +1,12 @@
+C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\obj\Debug\EasyInteriors-Client.csprojAssemblyReference.cache
+C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\obj\Debug\EasyInteriors-Client.csproj.CoreCompileInputs.cache
+C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\bin\Debug\EasyInteriors-Client.net.dll
+C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\bin\Debug\EasyInteriors-Client.net.pdb
+C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\bin\Debug\CitizenFX.Core.dll
+C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\bin\Debug\MsgPack.dll
+C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\bin\Debug\CitizenFX.Core.pdb
+C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\bin\Debug\CitizenFX.Core.xml
+C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\bin\Debug\MsgPack.xml
+C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\obj\Debug\EasyInteriors-Client.csproj.CopyComplete
+C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\obj\Debug\EasyInteriors-Client.net.dll
+C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\obj\Debug\EasyInteriors-Client.net.pdb
