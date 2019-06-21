@@ -84,7 +84,7 @@ namespace EasyInteriors
                             TriggerEvent("chat:addMessage", new
                             {
                                 color = new[] { 255, 0, 0 },
-                                args = new[] { "[EasyInteriors]", "Interior entrance created!" }
+                                args = new[] { "[EasyInteriors]", "Interior entrance created! Now type '/interior:set' to set the exit point" }
                             });
 
                             InteriorCreation.tempMarkers.Add(Game.PlayerPed.Position);
@@ -97,6 +97,8 @@ namespace EasyInteriors
                             });
                             InteriorCreation.tempMarkers.Add(Game.PlayerPed.Position);
                             Tick -= InteriorCreation.DrawMarkerUnderPlayer;
+                            Tick -= InteriorCreation.DrawTemporaryMarkers;
+                            InteriorCreation.CreateInterior(InteriorCreation.tempMarkers[0], InteriorCreation.tempMarkers[1]);
                             break;
                     }
 

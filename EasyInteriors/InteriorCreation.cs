@@ -30,5 +30,22 @@ namespace EasyInteriors_Client
 
             }
         }
+
+        public static async void CreateInterior(Vector3 entrance, Vector3 exit)
+        {
+            await GetUserInput();
+            Debug.WriteLine(GetOnscreenKeyboardResult() + " created!");
+        }
+
+        private static async Task GetUserInput()
+        {
+            DisplayOnscreenKeyboard(1, "FMMC_KEY_TIP8", "", "", "", "", "", 64);
+
+            while (UpdateOnscreenKeyboard() == 0)
+            {
+                await Delay(1);
+                DisableAllControlActions(0);
+            }
+        }
     }
 }
