@@ -27,14 +27,15 @@ namespace EasyInteriors_Client
             foreach (Vector3 pos in tempMarkers)
             {
                 World.DrawMarker(MarkerType.VerticalCylinder, pos + new Vector3(0f, 0f, -1f), Vector3.Zero, Vector3.Zero, new Vector3(1f, 1f, 1f), System.Drawing.Color.FromArgb(255, 255, 255));
-
             }
         }
 
         public static async void CreateInterior(Vector3 entrance, Vector3 exit)
         {
             await GetUserInput();
-            Debug.WriteLine(GetOnscreenKeyboardResult() + " created!");
+            string name = GetOnscreenKeyboardResult();
+            Debug.WriteLine(name + " created!");
+            TriggerServerEvent("easyinteriors:WriteInterior", entrance, exit, name);
         }
 
         private static async Task GetUserInput()
