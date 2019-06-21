@@ -22,17 +22,28 @@ namespace EasyInteriors
 
             RegisterCommand("createinterior", new Action<int, List<object>, string>((source, args, raw) =>
             {
-                Status.isPlayerCreatingInterior = true;
-
-                TriggerEvent("chat:addMessage", new
+                if (Status.isPlayerCreatingInterior)
                 {
-                    color = new[] { 255, 0, 0 },
-                    args = new[] { "[EasyInteriors]", "Walk to where you want your entrance to be, and type '/interior:set' or type '/interior:cancel' to cancel this operation" }
-                });
+                    Status.isPlayerCreatingInterior = true;
 
-                InteriorCreation.tempMarkers.Clear();
-                Tick += InteriorCreation.DrawMarkerUnderPlayer;
-                Tick += InteriorCreation.DrawTemporaryMarkers;
+                    TriggerEvent("chat:addMessage", new
+                    {
+                        color = new[] { 255, 0, 0 },
+                        args = new[] { "[EasyInteriors]", "Walk to where you want your entrance to be, and type '/interior:set' or type '/interior:cancel' to cancel this operation" }
+                    });
+
+                    InteriorCreation.tempMarkers.Clear();
+                    Tick += InteriorCreation.DrawMarkerUnderPlayer;
+                    Tick += InteriorCreation.DrawTemporaryMarkers;
+                }
+                else
+                {
+                    TriggerEvent("chat:addMessage", new
+                    {
+                        color = new[] { 255, 0, 0 },
+                        args = new[] { "[EasyInteriors]", "You are already creating an interior!" }
+                    });
+                }
 
             }), false);
 
