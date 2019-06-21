@@ -30,7 +30,9 @@ namespace EasyInteriors
                     args = new[] { "[EasyInteriors]", "Walk to where you want your entrance to be, and type '/interior:set' or type '/interior:cancel' to cancel this operation" }
                 });
 
+                InteriorCreation.tempMarkers.Clear();
                 Tick += InteriorCreation.DrawMarkerUnderPlayer;
+                Tick += InteriorCreation.DrawTemporaryMarkers;
 
             }), false);
 
@@ -47,6 +49,30 @@ namespace EasyInteriors
                     });
 
                     Tick -= InteriorCreation.DrawMarkerUnderPlayer;
+                    Tick -= InteriorCreation.DrawTemporaryMarkers;
+
+                }
+                else
+                {
+                    TriggerEvent("chat:addMessage", new
+                    {
+                        color = new[] { 255, 0, 0 },
+                        args = new[] { "[EasyInteriors]", "You aren't creating an interior" }
+                    });
+                }
+            }), false);
+
+            RegisterCommand("interior:set", new Action<int, List<object>, string>((source, args, raw) =>
+            {
+                if (Status.isPlayerCreatingInterior)
+                {
+                    TriggerEvent("chat:addMessage", new
+                    {
+                        color = new[] { 255, 0, 0 },
+                        args = new[] { "[EasyInteriors]", "Interior entrance created!" }
+                    });
+
+                    InteriorCreation.tempMarkers.Add(Game.PlayerPed.Position);
                 }
                 else
                 {
