@@ -22,9 +22,10 @@ namespace EasyInteriors
 
             RegisterCommand("createinterior", new Action<int, List<object>, string>((source, args, raw) =>
             {
-                if (Status.isPlayerCreatingInterior)
+                if (!Status.isPlayerCreatingInterior)
                 {
                     Status.isPlayerCreatingInterior = true;
+                    Status.creationStage = 0;
 
                     TriggerEvent("chat:addMessage", new
                     {
@@ -77,13 +78,29 @@ namespace EasyInteriors
             {
                 if (Status.isPlayerCreatingInterior)
                 {
-                    TriggerEvent("chat:addMessage", new
+                    switch (Status.creationStage)
                     {
-                        color = new[] { 255, 0, 0 },
-                        args = new[] { "[EasyInteriors]", "Interior entrance created!" }
-                    });
+                        case 0:
+                            TriggerEvent("chat:addMessage", new
+                            {
+                                color = new[] { 255, 0, 0 },
+                                args = new[] { "[EasyInteriors]", "Interior entrance created!" }
+                            });
 
-                    InteriorCreation.tempMarkers.Add(Game.PlayerPed.Position);
+                            InteriorCreation.tempMarkers.Add(Game.PlayerPed.Position);
+                            break;
+                        case 1:
+                            TriggerEvent("chat:addMessage", new
+                            {
+                                color = new[] { 255, 0, 0 },
+                                args = new[] { "[EasyInteriors]", "Interior exit created!" }
+                            });
+                            InteriorCreation.tempMarkers.Add(Game.PlayerPed.Position);
+                            Tick -= InteriorCreation.DrawMarkerUnderPlayer;
+                            break;
+                    }
+
+                    Status.creationStage++;
                 }
                 else
                 {

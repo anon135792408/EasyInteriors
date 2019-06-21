@@ -11,6 +11,11 @@ namespace EasyInteriors_Client
     public class Status : BaseScript
     {
         public static bool isPlayerCreatingInterior;
+        public static int creationStage = 0;
+        /*
+         * 0 = Creating Entrance
+         * 1 = Creating Exit
+         */
 
         public Status()
         {
