@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands.cs" />
+    <Compile Include="Runtime.cs" />
     <Compile Include="Interior.cs" />
     <Compile Include="InteriorCreation.cs" />
     <Compile Include="Main.cs" />
