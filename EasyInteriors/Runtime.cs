@@ -9,21 +9,17 @@ using static CitizenFX.Core.Native.API;
 
 namespace EasyInteriors
 {
-    public class Commands : BaseScript
+    public class Runtime : BaseScript
     {
-        public Commands()
+        public Runtime()
         {
             EventHandlers["onClientResourceStart"] += new Action<string>(OnClientResourceStart);
+            TriggerServerEvent("easyinteriors:RequestInteriors");
         }
 
         private void OnClientResourceStart(string resourceName)
         {
             if (GetCurrentResourceName() != resourceName) return;
-
-            RegisterCommand("getinteriors", new Action<int, List<object>, string>((source, args, raw) =>
-            {
-                TriggerServerEvent("easyinteriors:RequestInteriors");
-            }), false);
 
             RegisterCommand("createinterior", new Action<int, List<object>, string>((source, args, raw) =>
             {
@@ -79,7 +75,7 @@ namespace EasyInteriors
                 }
             }), false);
 
-            RegisterCommand("interior:set", new Action<int, List<object>, string>((source, args, raw) =>
+            RegisterCommand("interior:set", new Action<int, List<object>, string>(async (source, args, raw) =>
             {
                 if (Status.isPlayerCreatingInterior)
                 {
@@ -103,7 +99,9 @@ namespace EasyInteriors
                             InteriorCreation.tempMarkers.Add(Game.PlayerPed.Position);
                             Tick -= InteriorCreation.DrawMarkerUnderPlayer;
                             Tick -= InteriorCreation.DrawTemporaryMarkers;
-                            InteriorCreation.CreateInterior(InteriorCreation.tempMarkers[0], InteriorCreation.tempMarkers[1]);
+                            await InteriorCreation.CreateInterior(InteriorCreation.tempMarkers[0], InteriorCreation.tempMarkers[1]);
+                            TriggerServerEvent("easyinteriors:RequestInteriorsForAll");
+                            Status.isPlayerCreatingInterior = false;
                             break;
                     }
 

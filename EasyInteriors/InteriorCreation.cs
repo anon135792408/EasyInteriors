@@ -30,7 +30,7 @@ namespace EasyInteriors_Client
             }
         }
 
-        public static async void CreateInterior(Vector3 entrance, Vector3 exit)
+        public static async Task CreateInterior(Vector3 entrance, Vector3 exit)
         {
             await GetUserInput();
             string name = GetOnscreenKeyboardResult();
