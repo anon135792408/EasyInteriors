@@ -27,7 +27,9 @@ namespace EasyInteriors_Client
                 loadedInteriors = new List<dynamic>(interiors);
             }
             Tick -= DrawMarkers;
-            Tick += DrawMarkers;
+
+            if (interiors.Count > 0)
+                Tick += DrawMarkers;
         }
 
         private async Task DrawMarkers()
