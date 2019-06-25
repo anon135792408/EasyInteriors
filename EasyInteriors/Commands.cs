@@ -20,6 +20,11 @@ namespace EasyInteriors
         {
             if (GetCurrentResourceName() != resourceName) return;
 
+            RegisterCommand("getinteriors", new Action<int, List<object>, string>((source, args, raw) =>
+            {
+                TriggerServerEvent("easyinteriors:RequestInteriors");
+            }), false);
+
             RegisterCommand("createinterior", new Action<int, List<object>, string>((source, args, raw) =>
             {
                 if (!Status.isPlayerCreatingInterior)

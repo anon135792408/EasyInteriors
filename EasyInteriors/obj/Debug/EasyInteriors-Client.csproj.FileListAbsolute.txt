@@ -9,4 +9,3 @@ C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\bin\Debug\
 C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\obj\Debug\EasyInteriors-Client.csproj.CopyComplete
 C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\obj\Debug\EasyInteriors-Client.net.dll
 C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\obj\Debug\EasyInteriors-Client.net.pdb
-C:\Users\adame\source\repos\EasyInteriors\EasyInteriors\EasyInteriors\obj\Debug\EasyInteriors-Client.csprojAssemblyReference.cache
